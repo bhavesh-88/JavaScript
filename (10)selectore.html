@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="sec_one">
+        <div class="container">
+            <div>
+                <h1 class="head" id="heading">This my dom</h1>
+                <p class="pre" id="pre1" name="name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias voluptatibus aliquid cum hic nemo explicabo aperiam neque itaque asperiores consequuntur suscipit tenetur quas consequatur, illum excepturi perspiciatis impedit. A, praesentium.</p>
+                <p class="pre" id="pre2" name="name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias voluptatibus aliquid cum hic nemo explicabo aperiam neque itaque asperiores consequuntur suscipit tenetur quas consequatur, illum excepturi perspiciatis impedit. A, praesentium.</p>
+                <p class="pre" id="pre3" name="name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias voluptatibus aliquid cum hic nemo explicabo aperiam neque itaque asperiores consequuntur suscipit tenetur quas consequatur, illum excepturi perspiciatis impedit. A, praesentium.</p>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        // let element = document
+
+
+        // single Element Selectore
+
+        // let element = document.getElementById('heading').innerText="this my web"
+        let element = document.getElementById('heading').innerHTML="<i> This My Web </i>"    //tag chanee
+        // let element = document.getElementById('pre1')
+        element.style.color = "red"
+        console.log(element)
+
+
+        let element1 = document.querySelector(".container")  // class =.  // id = #
+        let element2 = document.querySelector(".head")
+        let element3 = document.querySelector("h1")   // tag
+        let element4 = document.querySelector(".pre")     // select one class by default first 
+        console.log(element1)
+        console.log(element2)
+        console.log(element3)
+        console.log(element4);
+
+
+
+        // Multiplr Element Selectore
+
+        let element5 = document.getElementsByClassName("pre")
+
+        console.log(element5);
+        let element6 = document.getElementsByTagName("p")
+
+        console.log(element6);
+
+        let element7 = document.getElementsByName("name")
+        console.log(element7);
+
+        let element8 = document.querySelectorAll(".pre")  // only class and tag
+        console.log(element8);
+
+
+    </script>
+</body>
+</html>
