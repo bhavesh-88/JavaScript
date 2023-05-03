@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: blue;
+        }
+
+        .red {
+            color: red;
+            visibility: hidden;
+            /* opacity: 0.5; */
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <Script>
+
+        // rows
+        for (let index = 1; index <= 10; index++) {
+
+            for (let h = 1; h <= 10; h++) {
+                document.write("*")
+                console.log("*");
+            }
+            document.write("<br/>")
+        }
+
+        for (let index = 1; index <= 10; index++) {
+
+            for (let h = 1; h <= index; h++) {
+                document.write("*")
+                console.log("*");
+            }
+            document.write("<br/>")
+        }
+
+        let i, j, k
+        let x = 10
+        for (i = 1; i <= x; i++) {
+
+            for (k = 1; k <= x - i; k++) {
+                // document.write("&nbsp;&nbsp;")
+                document.write("<span class='red'>*</span>");
+            }
+            for (j = 1; j <= i; j++) {
+                document.write("*")
+                console.log("*");
+            }
+            document.write("<br/>")
+        }
+
+        let a,b,c
+        let d = 10
+        for (a = 1; a <= x; a++) {
+            for (c = 1; c <= d - a; c++) {
+                document.write("&nbsp;")
+            }
+            for (b = 1; b <= a; b++) {
+                document.write("*")
+                console.log("*");
+            }
+            document.write("<br/>")
+        }
+    </Script>
+</body>
+
+</html>
