@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .slider{
+            width: 1000PX;
+            height: 500px;
+            margin:  50px auto;
+        }
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <img class="slider-img" src="https://picsum.photos/id/137/1000/500" alt="">
+        <img class="slider-img" src="https://picsum.photos/id/337/1000/500" alt="">
+        <img class="slider-img" src="https://picsum.photos/id/437/1000/500" alt="">
+        <img class="slider-img" src="https://picsum.photos/id/537/1000/500" alt="">
+        <img class="slider-img" src="https://picsum.photos/id/638/1000/500" alt="">
+        <img class="slider-img" src="https://picsum.photos/id/639/1000/500" alt="">
+        <img class="slider-img" src="https://picsum.photos/id/632/1000/530" alt="">
+        <img class="slider-img" src="https://picsum.photos/id/630/1000/500" alt="">
+    </div>
+
+
+
+
+    <script>
+        var SliderData = document.getElementsByClassName("slider-img");
+        counter = 0;
+        // console.log(SliderData);
+
+        function Slider() {
+            for (let index = 0; index < SliderData.length; index++) {
+                // console.log(SliderData[index]);
+                SliderData[index].style.display = "none";
+            }
+            if (counter >= SliderData.length) {
+                counter = 0;
+            }
+            // console.log(counter);
+            SliderData[counter].style.display = "block";
+            counter++;
+
+            setTimeout(Slider,2000);
+        }
+        Slider()
+    </script>
+</body>
+</html>

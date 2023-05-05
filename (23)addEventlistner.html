@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <p>show the date</p>
+        <!-- <button id="btn" onclick="date()">click me to show the date</button> -->
+        <button id="btn" >click me to show the date</button>
+        <p id="demo"></p>
+    </section>
+    <script>
+       document.getElementById('btn').addEventListener('dblclick', date)
+       function date(){
+        document.getElementById('demo').innerHTML = Date();
+       }
+    // console.log(element);
+    </script>
+</body>
+</html>
