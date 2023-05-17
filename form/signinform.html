@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 50px;
+            text-align: center;
+        }
+
+        h2 {
+            margin: 0px 0px 10px 0;
+        }
+
+        input {
+            width: 200px;
+            margin: 10px 0px;
+            padding: 10px;
+        }
+
+        input[type="submit"] {
+            width: 222px;
+            background-color: #3498db;
+            border: 0px;
+            color: white;
+        }
+
+        .error {
+            color: red;
+            margin: 0;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="" onsubmit="return validetform()">
+            <input type="text" placeholder="User Name" id="username"><br>
+            <p id="usererror" class="error"></p>
+            <input type="password" placeholder="Password" id="password"><br>
+            <p id="passerror" class="error"></p>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+    <script>
+        let username = document.getElementById("username")
+        let password = document.getElementById("password")
+
+
+        function validetform() {
+            if (username.value == '') {
+                document.getElementById("usererror").innerHTML = "** please fill the username filed"
+                event.preventDefault()
+        
+            }else if (username.value.length < 3) {
+                document.getElementById("usererror").innerHTML = "** user lenght must be between 3 to 6 char"
+                event.preventDefault()
+            
+            }else{
+                    document.getElementById("usererror").innerHTML = ""
+            }
+
+            if (password.value == "") {
+                document.getElementById("passerror").innerHTML = "** please fill the password filed"
+                event.preventDefault()
+            }else if (password.value.length < 8) {
+                document.getElementById("passerror").innerHTML = "** password lenght must be 8 char"
+                event.preventDefault()
+            }else{
+                    document.getElementById("passerror").innerHTML = ""
+                    
+                    alert("Your password created successfully");
+            }
+            
+            // return false
+        }
+    </script>
+</body>
+
+</html>

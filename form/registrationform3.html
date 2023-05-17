@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 15px;
+            font-family: system-ui;
+            background: -webkit-radial-gradient(top left, #90F6FB, #2C3283);
+
+        }
+
+        .form {
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ef6e58;
+        }
+
+        form {
+            width: 380px;
+            padding: 15px 40px 40px;
+            align-items: center;
+            /* text-align: center; */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            margin: 0 auto;
+
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        label i {
+            color: #999;
+            font-size: 80%;
+        }
+
+        input,
+        select {
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: block;
+            width: 100%;
+            border-radius: 2px;
+            background-color: #a9bae64a;
+        }
+
+        .box {
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+        .form-inline {
+            border: 1px solid #ccc;
+            padding: 8px 10px 4px;
+            border-radius: 2px;
+        }
+
+        .form-inline label,
+        .form-inline input {
+            display: inline-block;
+            width: auto;
+            padding-right: 15px;
+        }
+
+        .error {
+            color: red;
+            font-size: 90%;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=number],
+        input[type=password] {
+            outline: none;
+        }
+
+        input[type=submit] {
+            font-size: 110%;
+            font-weight: 200;
+            background-color: #ef6e58;
+            border-color: #ef6e58;
+            box-shadow: 0 3px 0 #bd432e;
+            color: #fff;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #bd432e;
+            border-color: #bd432e;
+        }
+
+        select {
+            outline: none !important;
+        }
+
+        .form-inline .sp {
+            padding-right: 30px;
+        }
+
+        .input-1 {
+            border: 1px solid #01cc40;
+
+        }
+
+        .fa-circle-exclamation{
+            color: red;
+            position: absolute;
+            right: 3%;
+            top: 38px;
+        }
+        .fa-circle-check{
+            color: green;
+            position: absolute;
+            right: 3%;
+            top: 38px;
+        }
+        .input-2 {
+            border: 1px solid red;
+        }
+
+        .input-3 {
+            border: 1px solid #01cc40 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" onsubmit="return validform()" name="form">
+            <h1>Register Here</h1>
+            <div class="box">
+                <label for="">Username :</label>
+                <input type="text" id="username" placeholder="Enter Your Name" name="username">
+                <!-- <i class="fa-solid fa-circle-exclamation"></i> -->
+                <!-- <i class="fa-solid fa-circle-check"></i> -->
+                <div class="error" id="nameErr"></div>
+            </div>
+            <div class="box">
+                <label for="">Email :</label>
+                <input type="email" id="email" placeholder="Enter Email" name="email">
+                <div class="error" id="emailErr"></div>
+            </div>
+            <div class="box">
+                <label for="">Mobile Number</label>
+                <input type="text" id="mobile" placeholder="Enter Your Mobile Number" maxlength="10" name="mobile">
+                <div class="error" id="mobileErr"></div>
+            </div>
+
+            <div class="box">
+                <td><label for="">Password :</label></td>
+                <input type="password" id="pwd1" placeholder="Enter Your Password">
+                <div class="error" id="passwordErr"></div>
+            </div>
+            <div class="box">
+                <td><label for="">Confirm Password :</label></td>
+                <input type="password" id="pwd2" placeholder="Enter Confirm Password">
+                <div class="error" id="cpasswordErr"></div>
+            </div>
+            <div class="box">
+                <label for="">Select Your Gender : </label>
+                <div class="form-inline" id="gender">
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                </div>
+                <div class="error" id="genderErr"></div>
+            </div>
+            <div class="box">
+                <label>Country</label>
+                <select name="country" id="country">
+                    <option>Select</option>
+                    <option>London</option>
+                    <option>India</option>
+                    <option>America</option>
+                </select>
+                <div class="error" id="countryErr"></div>
+            </div>
+            <div class="box">
+                <label for="">Select Your Sports : </label>
+                <div name="state" id="sport" class="form-inline">
+                    <label><input type="checkbox" name="sport" value="cricket" id="cricket"> Cricket</label>
+                    <label><input type="checkbox" name="sport" value="football" id="football"> Football</label>
+                    <label><input type="checkbox" name="sport" value="tennis" id="tennis"> Tennis</label>
+                    <label><input type="checkbox" name="sport" value="indoregames" id="indoregames"> Indoregames</label>
+                    <label><input type="checkbox" name="sport" value="others" id="others"> Others</label>
+                </div>
+                <div class="error" id="sportErr"></div>
+            </div>
+            <div class="box">
+                <input type="submit" value="submit">
+            </div>
+        </form>
+    </div>
+
+
+
+
+    <script>
+        function printError(Id, Msg) {
+            document.getElementById(Id).innerHTML = Msg;
+        }
+        function validform() {
+            var username = document.form.username.value;
+            var email = document.form.email.value;
+            var mobile = document.form.mobile.value;
+            var pwd1 = document.form.pwd1.value;
+            var pwd2 = document.form.pwd2.value;
+            var country = document.form.country.value;
+            var gender = document.form.gender.value;
+            // var sport = document.form.sport.value;
+
+
+            var nameErr = emailErr = mobileErr = passwordErr = cpasswordErr = countryErr = genderErr = sportErr = true;
+
+            // valid username
+
+            if (username == "") {
+                printError("nameErr", "Please enter your name <i class='fa-solid fa-circle-exclamation'></i>");
+                var elem = document.getElementById("username");
+                // var span_E = document.getElementsById("span")
+                // span_E.innerHTML='<i class="fa-solid fa-circle-exclamation"></i>';
+
+
+                // let span = document.createElement("span");
+                // var box = document.getElementsByClassName("box");
+                // span=document.innerHTML='<i class="fa-solid fa-circle-exclamation"></i>';
+                // document.box.append(span);
+
+                elem.classList.add("input-2");
+                elem.classList.remove("input-1");
+
+            }else {
+                var regex = /^[a-zA-Z\s]+$/;
+                if (regex.test(username) === false) {
+                    printError("nameErr", "Please enter a valid name <i class='fa-solid fa-circle-exclamation'></i>");
+                    var elem = document.getElementById("username");
+                    elem.classList.add("input-2");
+                    elem.classList.remove("input-1");
+                } else {
+                    printError("nameErr", '<i class="fa-solid fa-circle-check"></i>');
+                    nameErr = false;
+
+                    var elem = document.getElementById("username");
+
+                    elem.classList.add("input-1");
+                    elem.classList.remove("input-2");
+                    
+                }
+            }
+
+            // valid email
+            if (email == "") {
+                printError("emailErr", "Please enter your email address <i class='fa-solid fa-circle-exclamation'></i>");
+                var elem = document.getElementById("email");
+                elem.classList.add("input-2");
+                elem.classList.remove("input-1");
+            }else {
+                var regex = /^\S+@\S+\.\S+$/;
+                if (regex.test(email) === false) {
+                    printError("emailErr", "Please enter a valid email address <i class='fa-solid fa-circle-exclamation'></i>");
+                    var elem = document.getElementById("email");
+                    elem.classList.add("input-2");
+                    elem.classList.remove("input-1");
+                } else {
+                    printError("emailErr", '<i class="fa-solid fa-circle-check"></i>');
+                    emailErr = false;
+                    var elem = document.getElementById("email");
+                    elem.classList.add("input-1");
+                    elem.classList.remove("input-2");
+
+                }
+            }
+
+            // valid mobile
+            if (mobile == "") {
+                printError("mobileErr", "Please enter your mobile number <i class='fa-solid fa-circle-exclamation'></i>");
+                console.log(mobileErr);
+                var elem = document.getElementById("mobile");
+                elem.classList.add("input-2");
+                elem.classList.remove("input-1");
+            }else {
+                var regex = /^[1-9]\d{9}$/;
+                if (regex.test(mobile) === false) {
+                    printError("mobileErr", "Please enter a valid 10 digit mobile number <i class='fa-solid fa-circle-exclamation'></i>");
+                    var elem = document.getElementById("mobile");
+                    elem.classList.add("input-2");
+                    elem.classList.remove("input-1");
+                }else {
+                    printError("mobileErr",  '<i class="fa-solid fa-circle-check"></i>');
+                    mobileErr = false;
+                    var elem = document.getElementById("mobile");
+                    elem.classList.add("input-1");
+                    elem.classList.remove("input-2");
+                }
+            }
+
+
+            // valid password
+            if (pwd1 == '') {
+                printError("passwordErr", "Please enter your password <i class='fa-solid fa-circle-exclamation'></i>");
+                var elem = document.getElementById("pwd1");
+                elem.classList.add("input-2");
+                elem.classList.remove("input-1");
+
+            }else {
+                if (pwd1.search(/[0-9]/) == -1) {
+                    printError("passwordErr", "include atleast 1 numeric value <i class='fa-solid fa-circle-exclamation'></i>");
+                }else if (pwd1.search(/[a-z]/) == -1) {
+                    printError("passwordErr", "include atleast 1 lowercase character <i class='fa-solid fa-circle-exclamation'></i>");
+                }else if (pwd1.search(/[A-Z]/) == -1) {
+                    printError("passwordErr", "include atleast 1 uppercase character <i class='fa-solid fa-circle-exclamation'></i>");
+                }else if (pwd1.search(/[!\@\#\$\%\^\&\*]/) == -1) {
+                    printError("passwordErr", "include atleast 1 special symbol from this (!,@,#,$,%,^,&,*) <i class='fa-solid fa-circle-exclamation'></i>");
+                }else {
+                    printError("passwordErr",  '<i class="fa-solid fa-circle-check"></i>');
+                    passwordErr = false;
+                    var elem = document.getElementById("pwd1");
+                    elem.classList.add("input-1");
+                    elem.classList.remove("input-2");
+
+                }
+
+            }
+
+            if(pwd2 == '') {
+                printError("cpasswordErr", "Please enter your first password");
+                var elem = document.getElementById("pwd2");
+                elem.classList.add("input-2");
+                elem.classList.remove("input-1");
+
+            }else{if (pwd1 != pwd2) {
+                    printError("cpasswordErr", "Please are not match password <i class='fa-solid fa-circle-exclamation'></i>");
+                    var elem = document.getElementById("pwd2");
+                    elem.classList.add("input-2");
+                    elem.classList.remove("input-1");
+                }else {
+                    printError("cpasswordErr",  '<i class="fa-solid fa-circle-check"></i>');
+                    cpasswordErr = false;
+                    var elem = document.getElementById("pwd2");
+                    elem.classList.add("input-1");
+                    elem.classList.remove("input-2");
+                }
+            }
+
+
+            // valid country
+            if (country == "Select") {
+                printError("countryErr", "Please select your country <i class='fa-solid fa-circle-exclamation'></i>");
+                var elem = document.getElementById("country");
+                elem.classList.add("input-4");
+                elem.classList.remove("input-3");
+            } else {
+                printError("countryErr",  '<i class="fa-solid fa-circle-check"></i>');
+                countryErr = false;
+                var elem = document.getElementById("country");
+                elem.classList.add("input-3");
+                elem.classList.remove("input-4");
+            }
+
+
+            // valid gender
+            if (gender == "") {
+                printError("genderErr", "Please select your gender <i class='fa-solid fa-circle-exclamation'></i> ");
+                var elem = document.getElementById("gender");
+                elem.classList.add("input-4");
+                elem.classList.remove("input-3");
+            } else {
+                printError("genderErr", '<i class="fa-solid fa-circle-check"></i>');
+                genderErr = false;
+                var elem = document.getElementById("gender");
+                elem.classList.add("input-3");
+                elem.classList.remove("input-4");
+            }
+
+            var sport = document.form.sport;
+
+            for (i = 0; i <sport.length; i++) {
+                if (sport[i].checked == true) {
+                    return true
+                }
+                document.getElementById("sportErr").innerHTML = "** please select anyone";
+                return false
+
+            }
+
+            // if (sport == "") {
+            //     printError("sportErr", "Please select your sport");
+            //     var elem = document.getElementById("sport");
+
+            //     elem.classList.add("input-4");
+            //     elem.classList.remove("input-3");
+            // } else {
+            //     printError("sportErr", "");
+            //     sportErr = false;
+            //     var elem = document.getElementById("sport");
+            //     elem.classList.add("input-3");
+            //     elem.classList.remove("input-4");
+            // }
+        
+            if ((nameErr || emailErr || mobileErr || passwordErr || cpasswordErr || countryErr || genderErr || sportErr) == true) {
+                return false;
+            }
+
+        };
+
+    </script>
+
+</body>
+
+</html>
