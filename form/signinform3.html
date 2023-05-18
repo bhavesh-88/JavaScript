@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', 'sans-serif';
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 50, 0.8), rgba(0, 0, 50, 0.8)), url(459-background.png);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .form-box {
+            width: 90%;
+            max-width: 450px;
+            position: absolute;
+            top: 10%;
+            left: 35%;
+            /* transform: translate(-50%,50%); */
+            background: #fff;
+            padding: 50px 60px 70px;
+            text-align: center;
+        }
+        .form-box h1{
+            font-size: 30px;
+            margin-bottom: 60px;
+            color: #3c00a0;
+            position: relative;
+        }
+        .form-box h1::after{
+            content: '';
+            width: 30px;
+            height: 4px;
+            border-radius: 4px;
+            background: #3c00a0;
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translate(-50%,50%);
+        }
+        .input-field{
+            background: #eaeaea;
+            margin: 15px 0;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            max-height: 65px;
+            transition: max-height 0.5s;
+            overflow: hidden;
+        }
+        input{
+            width: 100%;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            padding: 18px 15px;
+        }
+        .input-field i{
+            margin-left: 15px;
+            color: #3c00a0;
+        }
+        .input-group{
+            margin-bottom:20px;
+        }
+        form p{
+            text-align: left;
+            font-size: 13px;
+        }
+        form p a{
+            text-decoration: none;
+            color: #3c00a0;
+        }
+        .btn-field{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn-field button{
+            flex-basis: 48%;
+            background: #3c00a0;
+            color: #fff;
+            height: 40px;
+            border-radius: 20px;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+            transition: background 1s;
+        }
+        .btn-field button.disable{
+            background: #eaeaea;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">sign Up</h1>
+            <form action="">
+                <div class="input-group">
+                    <div class="input-field" id="namefield">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="" id="" placeholder="Name">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" name="" id="" placeholder="Email">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="" id="" placeholder="Password">
+                    </div>
+                    <div class="input-field" id="cpassword">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="" id="" placeholder="Confrim Password">
+                    </div>
+                    <p>Lost Password <a href="#">Click Here!</a></p>
+                </div>
+                <div class="btn-field">
+                    <button type="button" id="signupbtn">Sign up</button>
+                    <button type="button" class="disable" id="signinbtn">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        let signupbtn = document.getElementById("signupbtn")
+        let signinbtn = document.getElementById("signinbtn")
+        let namefield = document.getElementById("namefield")
+        let cpassword = document.getElementById("cpassword")
+        let title = document.getElementById("title")
+        
+        
+
+
+
+        signinbtn.onclick = function () {
+            namefield.style.maxHeight = "0";
+            cpassword.style.maxHeight = "0";
+            title .innerHTML = "Sign In";
+            signupbtn.classList.add("disable");
+            signinbtn.classList.remove("disable");
+        }
+        signupbtn.onclick = function () {
+            namefield.style.maxHeight = "60px";
+            cpassword.style.maxHeight = "60px";
+            title .innerHTML = "Sign Up";
+            signupbtn.classList.remove("disable");
+            signinbtn.classList.add("disable");
+        }
+    </script>
+</body>
+
+</html>
